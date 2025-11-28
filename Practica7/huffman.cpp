@@ -31,9 +31,9 @@ void imprimirArbolASCII(Nodo* root, string prefijo = "", bool esIzq = true) {
     cout << prefijo;
 
     if (esIzq)
-        cout << "├──";
+        cout << "|--";
     else
-        cout << "└──";
+        cout << "|__";
 
     if (root->simbolo != '\0') {
         if (root->simbolo == ' ')
@@ -44,7 +44,7 @@ void imprimirArbolASCII(Nodo* root, string prefijo = "", bool esIzq = true) {
         cout << "(" << root->freq << ")\n";
     }
 
-    string nuevoPrefijo = prefijo + (esIzq ? "│   " : "    ");
+    string nuevoPrefijo = prefijo + (esIzq ? "|   " : "    ");
     imprimirArbolASCII(root->left, nuevoPrefijo, true);
     imprimirArbolASCII(root->right, nuevoPrefijo, false);
 }
